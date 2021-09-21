@@ -1,0 +1,641 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>开源项目合集</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="bbf6e1d1-0663-459b-a790-035d92f90df1" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/solid_red.png" style="object-position:center 40%"/><h1 class="page-title">开源项目合集</h1></header><div class="page-body"><p id="b9ac2b35-c203-476d-863b-383965257e39" class="">
+</p><p id="bcd28558-5a8c-4f39-98ee-7aaa20f29184" class="">in:name spirng starts:&gt;80000</p><p id="9301af80-ab16-4af8-8cf7-689ceadf33ca" class="">org:alibaba      org组织名</p><p id="5b15bb90-c8b1-45d2-81aa-62dd19b42306" class="">org:spring-projects   org组织名</p><h2 id="90b2c6e4-0080-46dc-9160-d65d132fa764" class="">后端</h2><p id="ec7097f9-3f4a-451a-8b71-f609ad06cc54" class=""><a href="https://gitee.com/jishenghua/JSH_ERP">华夏ERP</a> SpringBoot框架和SaaS模式，立志为中小企业提供开源好用的ERP软件</p><p id="4e6027f7-f6df-4bf0-bdc1-36686619ddde" class=""><a href="https://github.com/Wechat-Group/WxJava">WxJava</a> 微信开发 Java SDK ，微信支付，开放平台，小程序，企业微信，公众号等的后端开发</p><p id="244e72d4-3d2c-447a-8e38-661c0010a27f" class=""><a href="https://github.com/iluwatar/java-design-patterns">java-design-patterns</a>  java设计模式</p><p id="9a323f29-7210-48b7-be4b-4adceb1c9f7b" class=""><a href="https://github.com/macrozheng/mall">mall</a> mall项目是一套电商系统，包括前台商城系统及后台管理系统</p><p id="897b28cf-bea2-4464-ab38-501716f97d08" class=""><a href="https://github.com/wuyouzhuguli/SpringAll">springAll</a>  循序渐进，学习 Spring Batch、Spring Cloud Alibaba Spring Security OAuth2</p><p id="bddf6deb-91d5-4a44-aae7-6912a34c882f" class=""><a href="https://gitee.com/lemur/easypoi">easypoi</a> POI 工具类,,可以仅仅5行代码就可以完成  Excel的导入导出</p><p id="e7e3838a-a6ed-4e31-8fa0-0024354c5824" class=""><a href="https://gitee.com/dromara/hutool">hutool</a> 小而全的Java工具类库，使Java拥有函数式语言般的优雅</p><p id="d9e8d3f9-4bf6-481d-9aa3-ca3ccf5d4da0" class=""><a href="https://github.com/linlinjava/litemall">litemall </a> Spring Boot后端 + Vue管理员前端 + 微信小程序用户前端 + Vue用户移动端</p><p id="e721a5d7-bde0-41f1-9522-0e9b3e72bbd2" class=""><a href="https://github.com/CyC2018/CS-Notes">CS-NOTE</a></p><p id="eec8f155-bab6-4aed-a339-1527112b96fe" class=""><a href="https://gitee.com/geek_qi/cloud-platform">cloud-platform</a>  国内首个Spring Cloud微服务化RBAC的管理平台，前端采用d2-admin中台框架</p><p id="fb302b10-fcca-403a-b6e5-f637a60a57df" class=""><a href="https://gitee.com/y_project/RuoYi-Cloud">若依</a></p><p id="ea144792-775b-4637-87e7-15511709c9cd" class=""><a href="https://gitee.com/lvyeyou/DaShuJuZhiDaPingZhanShi">大屏展示模板</a></p><p id="bc867261-b2da-4765-bdc9-04de242fb2c9" class=""><a href="https://gitee.com/xkcoding/spring-boot-demo">springbootdemo</a></p><p id="687b07da-afe0-453b-97d6-922dfc8bd2da" class=""><a href="https://gitee.com/linex/battlecity">小霸王坦克大战（纯前端）</a></p><p id="120d3626-ff92-4f8f-8318-f6b249c656ae" class=""><a href="https://gitee.com/aaluoxiang/oa_system">自动化OA</a></p><p id="fe2f955c-ee66-4c73-8e9f-2af1b3bb1556" class=""><a href="https://gitee.com/pnoker/iot-dc3">iot-dc3</a> 基于Spring Cloud的开源的、分布式的物联网(IOT)平台</p><p id="6a5fe2ef-8178-4b1f-93c1-1b1ebff1ecec" class=""><a href="https://github.com/alibaba/druid">druid</a></p><p id="9224e96c-b056-433d-9a31-ecba4c5bf308" class=""><a href="https://github.com/alibaba/p3c">p3c  </a>代码规范</p><p id="6442ab46-b89d-4e37-aa59-e0595b343197" class=""><a href="https://github.com/alibaba/arthas">arthas </a>java诊断利器</p><p id="bf69c898-871e-483b-b70e-7d700322e443" class=""><a href="https://gitee.com/mirrors/easyexcel">easyexcel </a>gitee</p><p id="5fd15447-3144-4319-b245-3d44dea7e487" class=""><a href="https://github.com/alibaba/spring-cloud-alibaba">spring-cloud-alibaba</a></p><p id="2fce131a-d43f-459f-86c5-ac3aef306de2" class=""><a href="https://github.com/apolloconfig/apollo">apollo</a></p><p id="db197ebe-cb24-46d5-b115-34c5b6dee1b2" class=""><a href="https://gitee.com/owenwangwen/open-capacity-platform">open-capacity-platform</a>  gitee springcloud版模板 强</p><h2 id="6f33bbf5-ac59-4a02-adcd-f3a02fb3c35c" class="">前端</h2><p id="1048fb96-88c4-40b3-b494-af895d5d5466" class=""><a href="https://gitee.com/uCharts/uCharts">ucharts </a>高性能跨平台图表库，支持H5、APP、小程序</p><p id="6579692a-628e-4805-ab98-7c9169fe81cf" class=""><a href="https://github.com/d2-projects/d2-admin">d2-admin</a></p><p id="8c6275c8-9436-44bf-8024-d56004d2e2cc" class="">vant 移动/小程序UI</p><p id="e92775bb-2819-4787-a0f7-8c9e1c647f2c" class="">weui  微信官方ui</p><p id="6475f817-fe33-4656-8db1-e70fc55889be" class=""><a href="https://github.com/mrdoob/three.js">three.js</a>  3d开发</p><p id="e2bd44b8-b39e-4b2e-9709-78b9de3ac19a" class=""><a href="https://github.com/videojs/video.js">video.js</a></p><p id="62cfc7de-52a6-4609-b48d-733eba533458" class=""><a href="https://gitee.com/MTrun/big-screen-vue-datav">vue-big-screen</a> 大屏可视化渲染 gitee</p><p id="f5662820-24d5-4547-8ca1-d8a8ec786c61" class=""><a href="https://gitee.com/CodeGI/chat">JwChat</a> 一款基于vue、 element-ui 的前端组件；只需一个标签就可呈现通讯界面。</p><p id="c4a981a7-349d-4730-8580-db9a6f7ad69f" class=""><a href="https://gitee.com/anji-plus/captcha">AJ-Captcha</a> 行为验证码(滑动拼图、点选文字)</p><h2 id="50f7e6ad-c3c2-489e-8b39-9301cb15233f" class="">python</h2><p id="24207de7-04a9-4a44-a867-edac9fd11cbe" class=""><a href="https://github.com/apachecn/AiLearning">AiLearning</a>  python机器学习算法(github)</p><p id="bb1bbc7d-2cda-43f6-845f-0d70a1e57dc9" class=""><a href="https://github.com/jackfrued/Python-100-Days">Python-100-days</a></p><h2 id="15e1a560-21ae-48ae-bc8b-dcdd0e9cd737" class="">支付</h2><p id="57b6669c-6a84-4c55-b573-e40910664b3a" class="">pay-java-parent  第三方支付</p><p id="0170e02c-bf62-42da-aea0-6418a3bd919c" class=""><a href="https://gitee.com/52itstyle/spring-boot-pay">spring-boot-pay</a> 支付服务：支付宝，微信，银联详细代码案例；</p><h2 id="eae8b5fc-9332-49e5-ae18-d875d82d1a38" class="">算法</h2><p id="62b250e8-5e49-499f-97c0-230f40f29417" class=""><a href="https://github.com/TheAlgorithms">The Algorithms</a></p><h2 id="b56f3cd5-e1dd-476b-9938-8e0431512d29" class="">学习资料</h2><p id="b14dd4ed-ba0c-4f58-88bb-2012dfc51296" class=""><a href="https://github.com/DuGuQiuBai/Java">java</a> 27天成为Java大神</p><p id="3889d6bf-916b-45ee-8850-7647adbd8f81" class=""><a href="https://github.com/frank-lam/fullstack-tutorial">fullstack-tutorial</a></p><p id="61747b15-7b6f-4f0e-bf95-5c9544f16ca6" class=""><a href="https://github.com/EbookFoundation/free-programming-books">free-programming-books</a>  免费程序书籍</p><p id="a814ac41-6844-4ec4-8d38-c010ef588bde" class=""><a href="https://github.com/freeCodeCamp/freeCodeCamp">freeCodeCamp  </a>前端资料\</p><p id="98427998-1269-4699-9be4-63da8bf6f1f0" class=""><a href="https://github.com/CyC2018/Job-Recommend">job-Recommend</a></p><p id="ce78b234-896b-48bd-bf21-ad72dae99d62" class=""><a href="https://github.com/donnemartin/system-design-primer">system-design-primer</a> 学习如何设计大型系统</p><p id="ca100ab1-8d07-4836-8cd2-f360d9e375bb" class=""><a href="https://github.com/doocs/advanced-java">adveanced-java</a> Java 工程师进阶知识完全扫盲：涵盖高并发、分布式、高可用、微服务、海量数据处理等领域知识</p><p id="ac0a1b02-81b8-4813-b455-12d12b4f773f" class="">
+</p><p id="d43a930b-184e-46ed-83dd-2df19415ef05" class="">
+</p><p id="82d73236-9301-4301-b9eb-bb3eb7e43b6d" class="">
+</p><p id="6ab5160e-255b-4076-a459-d562fed44593" class="">
+</p></div></article></body></html>
