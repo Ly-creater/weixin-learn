@@ -1,6 +1,8 @@
 package com.test.pojo;
 
 import com.alibaba.fastjson.annotation.JSONField;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonValue;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -13,10 +15,11 @@ import lombok.Data;
  */
 @Data
 @AllArgsConstructor
+@JsonInclude
 public class TestJsonFiled {
 @JSONField(name = "name")
     private String sName;
-
+    @JsonValue
     private String aAge;
 
 }

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fastJ.dao.EmpDao">
+
+
+    <insert id="saveEmp">
+        INSERT INTO "SCOTT"."EMP"( EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, COMMENTS )select  #{empNo,jdbcType=VARCHAR}, #{ename,jdbcType=VARCHAR}, JOB, MGR, HIREDATE, #{sal,jdbcType=VARCHAR}, COMM, DEPTNO, COMMENTS
+        from EMP e
+        where e.empNo= #{mgr,jdbcType=VARCHAR}
+    </insert>
+</mapper>

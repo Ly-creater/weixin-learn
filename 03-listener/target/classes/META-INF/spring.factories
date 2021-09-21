@@ -1,0 +1,7 @@
+#org.springframework.boot.SpringApplicationRunListener=\
+#  com.test.listener.MyListener
+
+
+org.springframework.context.ApplicationListener=\
+  com.test.listener.MyListener1,\
+  com.test.listener.MyListener2
